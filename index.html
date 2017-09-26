@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>JS to Understand Nested Functions and Closures</title>
+        <!-- HTML5 shim for IE8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+      <script src=“https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js”></script>
+    <![endif]-->
+</head>
+<body onload="Func()">
+<!-- Header -->
+<header>
+<h1> Assignment 7.4 </h1>
+</header>
+<div id="result"></div>
+<script type="text/javascript">
+//outer function which returns an inner function 
+var outerFunc=(function(counter)
+{
+return function(counter){ return counter++;}
+})();
+
+//function to cal the outer function
+function Func(){
+	//few display statements
+document.getElementById("result").innerHTML +="Nesting Functions example<br>";
+document.getElementById("result").innerHTML +="Value of Counter variable "+outerFunc(2)+"<br>";
+document.getElementById("result").innerHTML +="Conclusion<br>";
+document.getElementById("result").innerHTML +=" Even though nesting of functions is acheived, the counter can only be altered by invoking the outer fucntion i.e outerFunc <br>";
+document.getElementById("result").innerHTML +=" Therefore the outer function acts as a closure, protecting the data";
+}
+//end of script
+</script>
+</body>
+</html>
